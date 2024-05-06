@@ -12,36 +12,29 @@ using System.Text.RegularExpressions;
 #endregion
 
 namespace MAIN_LIBRARY
-{
-    
-    /// <summary>
+{   /// <summary>
     /// Класс должность
     /// Вариант 10
     /// Малегин Дмитрий
     /// </summary>
     public class Doljnost
-    {
-        private string _name;
+    {   private string _name;
         private double _salary;
         private Podrozdelenie _podrozdelenie; //Балванка под пока не существующий класс ПОДРАЗДЕЛЕНИЕ
-
         public string Name
         {
             set { _name = value; }
             get { return _name; }
         }
-
         public double Salary
         {
             set
             {
                 if (value >= 0) { _salary = value; }
                 else { throw new ArgumentOutOfRangeException(); }
-
             }
             get { return _salary; }
         }
-
         public Doljnost(string name, double salary, Podrozdelenie podrozdelenie)
         {
             Name = name;
@@ -49,7 +42,6 @@ namespace MAIN_LIBRARY
             _podrozdelenie = podrozdelenie;
         }
     }
-
     /// <summary>
     /// Класс Студент
     /// Вариант 5
@@ -76,14 +68,11 @@ namespace MAIN_LIBRARY
             get { return otchestvo; }
             set { otchestvo = value; }
         }
-
-
         private DateTime dateofbirth;
         public DateTime Dateofbirth
         {
             get { return dateofbirth; }
             set { dateofbirth = value; }
-
         }
         public Student(string surname, string name, string otchestvo, DateTime dateofbith, Group1 group1)
         {
@@ -94,16 +83,13 @@ namespace MAIN_LIBRARY
             _group1 = group1;
         }
     }
-
     /// <summary>
     /// Класс Аудитория
     /// Вариант 2
     /// Дайлиденок Никита
     /// </summary>
     public class Auditoria
-    {
-        private string _Name;
-        private Sotrudnik _sotrudnic;
+    {   private string _Name;
         private string _Seat = "23";
         private string _Windows = "2";
         //private Oborydovanie _oborydovanie; В группе не делается такой вариант
@@ -126,42 +112,35 @@ namespace MAIN_LIBRARY
         public Auditoria(string name, Sotrudnic sotrudnic, string seat, /*Oborydovanie oborydovanie,*/ string windows)
         {
             _Name = name;
-            _sotrudnic = sotrudnic;
             _Seat = seat;
             _Windows = windows;
             //_oborydovanie = oborydovanie;
         }
     }
-
     /// <summary>
     /// Класс Подразделение
     /// Вариант 11
     /// Носков Иван
     /// </summary>
     public class Podrozdelenie
-    {
-        private string _nazvanie;
+    {   private string _nazvanie;
         private string _rukovoditel;
         private Organizaciya _organizaciya;
-
         public string Nazvanie
         {
             get { return _nazvanie; }
             set { _nazvanie = value; }
         }
-
         public string Rukovoditel
         {
             get { return _rukovoditel; }
             set { _rukovoditel = value; }
         }
-
         public Organizaciya Organizaciya
         {
             get { return _organizaciya; }
             set { _organizaciya = value; }
         }
-
         public Podrozdelenie(string nazvanie, string rukovoditel, Organizaciya organizaciya)
         {
             Nazvanie = nazvanie;
@@ -175,12 +154,10 @@ namespace MAIN_LIBRARY
     /// Рыбаков Кирилл
     /// </summary>
     public class Organizaciya
-    {
-        private string _nazvanie;
+    {   private string _nazvanie;
         private string _yuridicheskiyAdres;
         private string _fakticheskiyAdres;
         //private Sotrudnik _rukovoditel; //класс сотрудник еще не создан
-
         public Organizaciya(string nazvanie, string yuridicheskiyAdres, string fakticheskiyAdres /*Sotrudnik rukovoditel*/)// класс пока еще не создан
         {
             _nazvanie = nazvanie;
@@ -189,20 +166,16 @@ namespace MAIN_LIBRARY
             //_rukovoditel = rukovoditel; //нужен класс сотрудник
         }
     }
-
     /// <summary>
     /// Класс Группа
     /// Вариант 4
     /// Киселёв Александр
     /// </summary>
     public class Group1
-    {
-        private string _nazvanie;
+    {   private string _nazvanie;
         private string _sokrachenie;
         private string _chislennost;
         private int _godpostuplenija;
-        private string Sotrudnik _sotrudnic; //Нет варианта 9 (Сотрудник)
-        private string Specialnost _specialnost; //Нет варианта 6 (Специальность)
         public string Nazvanie
         {
             get { return _nazvanie; }
@@ -228,25 +201,12 @@ namespace MAIN_LIBRARY
             }
             get { return _godpostuplenija; }
         }
-        public string Sotrudnik 
-        {
-            get { return _sotrudik; }
-            set { _sotrudnic = value; }
-        }
-        public string Specialnost
-        {
-            get { return _specialnost; }
-            set { _specialnost = value; }
-        }
-        public Group1(string nazvanie, string sokrachenie, string chislennost, int godpostuplenija, Sotrudnik sotrudnic, Specialnost specialnost)
+        public Group1(string nazvanie, string sokrachenie, string chislennost, int godpostuplenija)
         {
             Nazvanie = nazvanie;
             Sokrachenie = sokrachenie;
             Chislennost = chislennost;
             Godpostuplenija = godpostuplenija;
-            _sotrudnic = sotrudnic;
-            _specialnost = specialnost;
-
         }
     }
     /// <summary>
@@ -255,28 +215,25 @@ namespace MAIN_LIBRARY
     /// Доронин Александр
     /// </summary>
      public class discipline
- {
-     private string name;
-     private string reduction;
+     {   private string name;
+         private string reduction;
 
-     public discipline(string name, string reduction)
-     {
-         this.name = name;
-         this.reduction = reduction;
+        public discipline(string name, string reduction)
+        {
+            this.name = name;
+            this.reduction = reduction;
+        }
      }
- }
     /// <summary>
     /// Класс корпус
     /// Вариант 13
     /// Смирнов Евгений
     /// </summary>
     public class Corpus
-    {
-        private string Name { get; set; }
+    {   private string Name { get; set; }
         private string Adress { get; set; }
         private string Comm { get; set; }
         private string Org { get; set; }
-
         public Corpus(string name, string adress)
         {
             Name = name;
@@ -296,7 +253,6 @@ namespace MAIN_LIBRARY
         public Smena(string name)
         {
             Name = name;
-
         }
     }
     /// <summary>
@@ -305,8 +261,7 @@ namespace MAIN_LIBRARY
     /// Смирнов Кирилл
     /// </summary>
     class Vid_Zan
-    {
-        private string Name;
+    {   private string Name;
         public Vid_Zan(string name)
         {
             Name = name;
@@ -318,12 +273,10 @@ namespace MAIN_LIBRARY
     /// Костров Егор
     /// </summary>
     class Para
-    {
-        private string StartPara;
+    {   private string StartPara;
         private string EndPara;
         private string StartChill;
         private string EndChill;
-        private string Smena _smena;
         public string ParaStart
         {
             get
@@ -368,15 +321,13 @@ namespace MAIN_LIBRARY
                 EndChill = value;
             }
         }
-        public Para(string startpara, string endpara, string startchill, string endchill, Smena smena)
+        public Para(string startpara, string endpara, string startchill, string endchill)
         {
             StartPara = startpara;
             EndPara = endpara;
             StartChill = startchill;
             EndChill = endchill;
-            _smena = smena;
         }
-
     }
     /// <summary>
     /// Класс Сотрудник 
@@ -384,15 +335,10 @@ namespace MAIN_LIBRARY
     /// Кулишенко Кирилл 
     /// </summary>
     public class Sotrudnic
-    {
-        private string _Surname;
-
+    {   private string _Surname;
         private string _Name;
         private string _Otchestvo;
         private Doljnost doljnost;
-
-
-
         public string Surname
         {
             get { return _Surname; }
@@ -416,14 +362,9 @@ namespace MAIN_LIBRARY
         public Sotrudnic(string surname,  string name,  string otchestvo, Doljnost doljnost)
         {
             _Surname = name;
-            
             _Name = name;
             _Otchestvo= otchestvo;
             _doljnost= doljnost;
-            
         }
     }
-
 }
-    
-
